@@ -1,0 +1,8 @@
+#variaveis
+
+
+
+
+
+print("Olá mundo!")
+
