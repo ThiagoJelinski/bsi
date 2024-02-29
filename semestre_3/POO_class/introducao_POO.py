@@ -26,8 +26,8 @@ class Usuario():
     def hello(self):
         return f"Olá , {self.nome} {self.sobrenome}"
 
-nome = "Gustavo"
-sobrenome = "Kubiack"
+nome = "Mary"
+sobrenome = "Jane"
 
 usuario1 = Usuario(nome,sobrenome)
 
