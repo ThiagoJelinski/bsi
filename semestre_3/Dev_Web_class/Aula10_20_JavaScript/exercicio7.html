@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    <h1>Diferença entre Valor Pago e Proposta Recebida</h1>
+
+    <label for="valorPago">Valor pago pelo ingresso (R$):</label>
+    <input type="number" id="valorPago" value="170" readonly>
+    <br><br>
+    <label for="propostaRecebida">Valor da proposta recebida (R$):</label>
+    <input type="number" id="propostaRecebida">
+    <br><br>
+    <button onclick="calcularDiferenca()">Calcular Diferença</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularDiferenca() {
+            var valorPago = parseFloat(document.getElementById('valorPago').value);
+            var propostaRecebida = parseFloat(document.getElementById('propostaRecebida').value);
+
+            if (isNaN(propostaRecebida)) {
+                alert('Por favor, insira um valor válido para a proposta recebida.');
+                return;
+            }
+
+            var diferenca = propostaRecebida - valorPago;
+
+            document.getElementById('resultado').innerText = "A diferença entre o valor pago pelo ingresso e a proposta recebida é de R$ " + diferenca.toFixed(2);
+        }
+    </script>
+</body>
+</html>

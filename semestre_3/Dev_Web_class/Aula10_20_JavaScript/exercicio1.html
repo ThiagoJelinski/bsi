@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1</title>
+</head>
+<body>
+    <h1>Conversor de Temperatura</h1>
+    <p>Insira a temperatura em Fahrenheit:</p>
+    <input type="number" id="tempFahrenheit">
+    <button onclick="converterParaCelsius()">Converter</button>
+    <p id="resultado"></p>
+
+    <script>
+        function fahrenheitParaCelsius(fahrenheit) {
+            return (fahrenheit - 32) * 5 / 9;
+        }
+
+        function converterParaCelsius() {
+            var tempFahrenheit = parseFloat(document.getElementById('tempFahrenheit').value);
+            if (!isNaN(tempFahrenheit)) {
+                var tempCelsius = fahrenheitParaCelsius(tempFahrenheit);
+                document.getElementById('resultado').innerText = tempFahrenheit + " graus Fahrenheit é equivalente a " + tempCelsius.toFixed(2) + " graus Celsius.";
+            } else {
+                document.getElementById('resultado').innerText = "Por favor, insira um valor numérico válido.";
+            }
+        }
+    </script>
+</body>
+</html>

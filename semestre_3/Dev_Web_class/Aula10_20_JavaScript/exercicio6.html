@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    <h1>Comparação de Salários de Professores</h1>
+
+    <label for="horasAula1">Quantidade de horas-aula do primeiro professor:</label>
+    <input type="number" id="horasAula1">
+    <br>
+    <label for="valorHora1">Valor por hora do primeiro professor:</label>
+    <input type="number" id="valorHora1">
+    <br><br>
+    <label for="horasAula2">Quantidade de horas-aula do segundo professor:</label>
+    <input type="number" id="horasAula2">
+    <br>
+    <label for="valorHora2">Valor por hora do segundo professor:</label>
+    <input type="number" id="valorHora2">
+    <br><br>
+    <button onclick="compararSalarios()">Comparar Salários</button>
+    <br>
+    <p id="resultado"></p>
+
+    <script>
+        function compararSalarios() {
+            var horasAula1 = parseFloat(document.getElementById('horasAula1').value);
+            var valorHora1 = parseFloat(document.getElementById('valorHora1').value);
+            var horasAula2 = parseFloat(document.getElementById('horasAula2').value);
+            var valorHora2 = parseFloat(document.getElementById('valorHora2').value);
+
+            if (isNaN(horasAula1) || isNaN(valorHora1) || isNaN(horasAula2) || isNaN(valorHora2)) {
+                alert('Por favor, insira valores válidos para todas as entradas.');
+                return;
+            }
+
+            var salarioTotal1 = horasAula1 * valorHora1;
+            var salarioTotal2 = horasAula2 * valorHora2;
+
+            var resultado = "";
+            if (salarioTotal1 > salarioTotal2) {
+                resultado = "O primeiro professor tem um salário total maior: R$ " + salarioTotal1.toFixed(2);
+            } else if (salarioTotal2 > salarioTotal1) {
+                resultado = "O segundo professor tem um salário total maior: R$ " + salarioTotal2.toFixed(2);
+            } else {
+                resultado = "Os dois professores têm salários totais iguais: R$ " + salarioTotal1.toFixed(2);
+            }
+
+            document.getElementById('resultado').innerText = resultado;
+        }
+    </script>
+</body>
+</html>

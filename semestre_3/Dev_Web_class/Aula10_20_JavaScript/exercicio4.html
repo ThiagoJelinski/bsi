@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <h1>Soma de Números Pares e Ímpares</h1>
+
+    <p>A soma dos números pares entre 1 e 100 é: <span id="somaPares"></span></p>
+    <p>A soma dos números ímpares entre 1 e 100 é: <span id="somaImpares"></span></p>
+
+    <script>
+        var somaPares = 0;
+        var somaImpares = 0;
+
+        for (var i = 1; i <= 100; i++) {
+            if (i % 2 === 0) {
+                somaPares += i;
+            } else {
+                somaImpares += i;
+            }
+        }
+
+        document.getElementById('somaPares').innerText = somaPares;
+        document.getElementById('somaImpares').innerText = somaImpares;
+    </script>
+</body>
+</html>

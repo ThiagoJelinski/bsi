@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Preço de Venda de Pipoca</title>
+</head>
+<body>
+    <h1>Calculadora de Preço de Venda de Pipoca</h1>
+
+    <p>Os alunos do terceiro ano do IFC irão vender pipoca para arrecadar dinheiro para pagar sua formatura.</p>
+    <p>Eles gastaram R$ 150,00 comprando os itens suficientes para produzir 250 saquinhos de pipoca.</p>
+    <p>Para que o lucro final da turma seja de R$ 350,00, cada saquinho de pipoca deve ser vendido por:</p>
+
+    <p id="precoVenda"></p>
+
+    <script>
+        var custoTotal = 150.00;
+        var numeroSaquinhos = 250;
+        var lucroDesejado = 350.00;
+
+        var custoPorSaquinho = custoTotal / numeroSaquinhos;
+
+        var precoVenda = custoPorSaquinho + (lucroDesejado / numeroSaquinhos);
+
+        document.getElementById('precoVenda').innerText = "R$ " + precoVenda.toFixed(2);
+    </script>
+</body>
+</html>
